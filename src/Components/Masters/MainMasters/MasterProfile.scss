@@ -1,0 +1,71 @@
+.profile__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgb(110, 100, 100);
+}
+
+.profile__master {
+    padding: 0 20px 0 0;
+}
+
+.profile__appointment{
+    margin: 13px 0;
+}
+
+.profile__appointment>a {
+    color: #fff;
+    text-shadow: 2px 2px 6px #CC9933;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.profile__img {
+    max-height: 100%;
+}
+
+.image {
+    border-radius: 25%;
+    max-width: 100%;
+    max-height: 420px;
+    // object-fit: cover;
+    -webkit-box-shadow: 0px 0px 20px 13px rgba(189, 165, 39, 0.32);
+    -moz-box-shadow: 0px 0px 20px 13px rgba(189, 165, 39, 0.32);
+    box-shadow: 0px 0px 20px 13px rgba(189, 165, 39, 0.32);
+}
+
+.profile__info {
+    text-align: center;
+    line-height: 35px;
+}
+
+.profile__name {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.profile__city {
+    letter-spacing: 0.1em;
+    font-size: 25px;
+}
+.profile__station{
+    letter-spacing: 0.1em;
+    font-size: 15px;
+}
+
+
+@media screen and (min-width: 763px) {
+    .profile__row {
+        justify-content: space-between;
+    }
+
+    .image {
+        object-fit: contain;
+        max-width: 300px;
+        
+    }
+}

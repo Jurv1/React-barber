@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Oswald:wght@400;500;700&family=Quicksand&display=swap');
+.Logos {
+    font-family: 'Dancing Script', cursive;
+    padding: 20px 0 0 0;
+    font-size: 40px;
+    z-index: 25;
+    //color: #fff;
+    position: relative;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    & .header__logo > span{
+        padding: 0 0 0 53px;
+    }
+    & .header__logo{
+        color: #fff;
+    }
+}

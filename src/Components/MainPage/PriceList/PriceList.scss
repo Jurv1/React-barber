@@ -1,0 +1,21 @@
+.price__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    border-bottom: 1.5px solid rgb(110, 100, 100);
+
+    &.price__row:last-child{
+        margin-bottom: 100px;
+    }
+
+    & > .textElements{
+        letter-spacing: 0.1em;
+        font-size: 25px;
+        color: #fff;
+    }
+    & > .amountsElements{
+        font-size: 18px;
+        color: orange;
+    }
+}

@@ -1,0 +1,63 @@
+@import './Components/NullStyle/Null';
+@import './Components/HeaderComp/Burger/BurgerComp';
+@import './Components/HeaderComp/Header';
+@import './Components/HeaderComp/HeaderLogo/Logo';
+@import './Components/HeaderComp/HeaderMenuComp/HeaderMenu';
+@import './Components/HeaderComp/HeaderMenuComp/HeaderMenu_item/MenuItem';
+@import './Components/HeaderComp/SubLink/SubLink';
+@import './Components/MainPage/MainPage';
+@import './Components/MainPage/PriceList/PriceList';
+@import './Components/MainPage/PriceRow/PriceAmount/PriceAmount';
+@import './Components/MainPage/PriceRow/PriceText/PriceText';
+@import './Components/MainPage/SectOne/SectOne';
+@import './Components/MainPage/SubTitle/SubT';
+@import './Components/MainPage/Title/Title.module';
+@import './Components/MainPage/SectThree/SectThree.module';
+@import './Components/MainPage/SectThree/Swiper/scss/bundle.scss';
+@import './Components/MainPage/SectFour/Popup/Popup';
+@import './Components/MainPage/SectFour/SectFour';
+@import './Components/MainPage/IBG/IBG';
+@import './Components/Footer/Footer';
+@import './Components/Blog/Blog';
+@import './Components/Blog/MainBlog/MainBlog';
+@import './Components/Text/Text';
+@import './Components/Blog/Button/Button';
+@import './Components/Blog/Post/Post';
+@import './Components/Masters/Masters';
+@import './Components/Masters/MainMasters/MasterProfile';
+@import './Components/Online/Online';
+@import './Components/Online/OnlineForm/OnlineForm';
+
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: #000;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
+}
+
+.page {
+  
+  flex: 1 1 auto;
+}

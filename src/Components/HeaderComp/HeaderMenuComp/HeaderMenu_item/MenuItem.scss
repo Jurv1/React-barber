@@ -1,0 +1,10 @@
+.menu__link {
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    margin: 0 20px 0 0;
+    &:hover{
+        color: rgba(255, 166, 0, 0.795);
+        text-decoration: underline;
+    }
+}

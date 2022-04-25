@@ -1,0 +1,26 @@
+.menu__sub-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #5032E7;
+    padding: 15px;
+    min-width: 150px;
+    & > li {
+        margin-bottom: 25px;
+    }
+    &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.menu__sub-link {
+    color: #fff;
+    margin: 25px 0;
+    &:hover{
+        text-decoration: underline;
+    }
+}

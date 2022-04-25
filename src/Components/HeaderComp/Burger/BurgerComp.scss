@@ -1,0 +1,126 @@
+@media screen and (max-width: 767px) {
+
+    #arrow {
+        display: none;
+    }
+
+    .popup__text {
+        display: block;
+    }
+
+    .header__logo {
+        flex: 0 0 40px;
+    }
+
+    .burger {
+        z-index: 55;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+
+        & span {
+            display: block;
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            transition: all 0.3s linear;
+            background-color: #fff;
+        }
+
+        & .first {
+            top: 0;
+        }
+
+        & .second,
+        & .third {
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+
+        & .fourth {
+            bottom: 0;
+        }
+    }
+
+    .burger__active {
+
+        & .first,
+        .fourth {
+            opacity: 0;
+        }
+
+        & .second {
+            transform: scale(1) translate(0px, -50%) rotate(45deg);
+        }
+
+        & .third {
+            transform: scale(1) translate(0px, -50%) rotate(-45deg);
+        }
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.959);
+        padding: 100px 0x 30px 30px;
+        margin: 110px 0 0 0;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+
+        &::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            z-index: 50;
+        }
+    }
+
+    .menu__body__active {
+        left: 0;
+        margin: 110px 0px 0 0px;
+
+    }
+
+    .menu__list {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin: 25% 0 0 0;
+
+        &>li {
+            &:last-child {
+                display: none;
+            }
+
+            //margin: 0 25px 30px 0;
+            margin: 0 auto;
+        }
+
+        &>#item {
+            margin-bottom: 50px;
+        }
+
+    }
+
+
+    .menu__list>li:last-child {
+        margin: 0;
+    }
+
+    .menu__link {
+        font-size: 24px;
+        //padding: 0 50px 0 0;
+    }
+
+    body._touch .menu__arrow {
+        margin: 4.5px 300px 0 0;
+    }
+}

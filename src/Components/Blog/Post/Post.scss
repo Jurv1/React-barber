@@ -1,0 +1,23 @@
+.post__row{
+    display: flex;
+    margin: 16px 0;
+}
+
+.post__text{
+    flex: 1 1 auto;
+    font-size: 16px;
+    line-height: 20px;
+
+}
+.post__icon{
+    font-size: 60px;
+    margin-right: 5px;
+}
+.author{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid grey;
+}
+
