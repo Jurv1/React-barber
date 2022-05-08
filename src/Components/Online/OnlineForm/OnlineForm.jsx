@@ -1,20 +1,53 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 
-export function OnlineForm  (props)  {
-  
+export function OnlineForm(props) {
+  const initialValues = { login: "", surname: "" }
+  const [formValues, setFormValues] = React.useState(initialValues)
+  const [formErr, setFormErr] = React.useState({})
   let mastersElements = props.masters.map(m => <option key={m.id} >{m.name}</option>)
   let timesElements = props.time.map(t => <option key={t.id} disabled={t.free}>{t.time}</option>)
-  const [input, setInput] = React.useState('')
-  const [input2, setInput2] = React.useState('')
+  const [submit, setSubmit] = React.useState(false)
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormValues({ ...formValues, [name]: value })
+    console.log(formValues)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setFormErr(validator(formValues))
+    setSubmit(true)
+  }
+  const validator = (values) => {
+    const err = {}
+    const regularEx1 = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
+    if (!values.surname) {
+      err.surname = "Фамилия не введена"
+    }
+    if (!values.login) {
+      err.login = "Телефон не введен"
+    } else if (!regularEx1.test(values.login)) {
+      err.login = "Невалидный номер"
+    }
+    return err
+  }
+
+  React.useEffect(() => {
+    console.log(formErr)
+    if (Object.keys(formErr).length === 0 && submit) {
+      console.log(formValues)
+    }
+  }, [formErr])
+
   return (
     <div className='container'>
-      <form  action="#" method='' className="online__form">
+      <form action="#" onSubmit={handleSubmit} className="online__form">
         <div className="form__man">
           <p>Ваши контактные данные</p>
-          <input value={input} onChange={e => setInput(e.target.value)} type="tel" name="login" placeholder='Телефон' />
-          <input value={input2} onChange={l => setInput2(l.target.value)} type="text" name="surname" placeholder='Фамилия' />
+          <input value={formValues.login} onChange={handleChange} type="tel" name="login" placeholder='Телефон' />
+          <p>{formErr.login}</p>
+          <input value={formValues.surname} onChange={handleChange} type="text" name="surname" placeholder='Фамилия' />
+          <p>{formErr.surname}</p>
         </div>
         <div className="form__master">
           <p>Выберете мастера и время записи</p>
@@ -25,7 +58,7 @@ export function OnlineForm  (props)  {
             {timesElements}
           </select>
         </div>
-        <button disabled={(!input) || (!input2)} onClick={alert} type='submit' className='button__body'>
+        <button type='submit' className='button__body'>
           <p className="button__text">
             {props.name}
           </p>
